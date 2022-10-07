@@ -1,12 +1,13 @@
 
 let cocteles = [];
 
+
 fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
     .then( response => response.json())
     .then( response => {
         cocteles = response.drinks;
     })
-    .catch( err => console.log(err));
+    .catch( err => console.log(err)); 
 
 fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
     .then( response => response.json())
@@ -14,12 +15,10 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
         cocteles = cocteles.concat(response.drinks);
         cargarDatos();
     })
-    .catch( err => console.log(err));
+    .catch( err => console.log(err)); 
 
+async function cargarDatos(){
 
-
-    
-function cargarDatos(){
     let listCocteles = document.getElementById('listCocteles');
     let data = '';
     for(let coctel of cocteles){
@@ -29,8 +28,8 @@ function cargarDatos(){
                 <div class="body">
                     <h2 class="title">${coctel.strDrink}</h2>
                     <h3 class="subtitle">Ingredientes</h3>
-                        ${details?.strIngredient1}
-                    <span class="categories">${details?.strAlcoholic}</span>
+                        ${1}
+                    <span class="categories">${1}</span>
                     <button class="btn">Comprar</button>
                 </div>
             </div>
